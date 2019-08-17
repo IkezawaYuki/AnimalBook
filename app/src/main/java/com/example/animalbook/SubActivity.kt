@@ -24,6 +24,17 @@ class SubActivity : AppCompatActivity() {
             fragmentTransaction.replace(R.id.container, fragment).addToBackStack(null).commit()
         }
 
+        giraffeButton.setOnClickListener{
+            val fragment = GiraffeFragment()
+            val fragmentManager = this.supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        val fragment = titleFragment as? TitleFragment
+        fragment?.setTitle("図鑑画面");
         
     }
 }
